@@ -3,7 +3,7 @@
         "v8Flags": "--expose_gc",
         "forceLog": true
     },
-    "main": "main.js",
-    "name": "tns-template-blank-ng",
-    "version": "3.1.1"
+    "name": "nativescript-template-ng-groceries",
+    "version": "3.0.0",
+    "main": "main.js"
 }

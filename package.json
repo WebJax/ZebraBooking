@@ -1,10 +1,13 @@
 {
-    "description": "NativeScript Application",
-    "license": "SEE LICENSE IN <your-license-filename>",
-    "readme": "NativeScript Application",
-    "repository": "<fill-your-repository-here>",
+    "name": "nativescript-template-ng-groceries",
+    "version": "3.0.0",
+    "main": "main.js",
+    "description": "Template for starting Groceries as part of the NativeScript Getting Started Tutorial",
+    "keywords": [
+        "NativeScript"
+    ],
     "nativescript": {
-        "id": "org.nativescript.blankng",
+        "id": "org.nativescript.groceriesng",
         "tns-android": {
             "version": "5.0.0"
         },
@@ -12,7 +15,8 @@
             "version": "5.0.0"
         },
         "playground": {
-            "id": "1058192678.1543869089"
+            "id": "1058192678.1543869089",
+            "usedTutorial": true
         }
     },
     "dependencies": {
@@ -56,7 +60,6 @@
         "babylon": "6.18.0",
         "lazy": "1.0.11",
         "nativescript-dev-typescript": "0.7.2",
-        "nativescript-dev-webpack": "0.17.0",
         "tns-platform-declarations": "4.2.0",
         "typescript": "^2.7.2"
     }

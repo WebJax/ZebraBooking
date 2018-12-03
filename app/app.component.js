@@ -6,8 +6,8 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: "ns-app",
-            templateUrl: "app.component.html"
+            selector: "my-app",
+            template: "<Label text='hello world'></Label>"
         })
     ], AppComponent);
     return AppComponent;
