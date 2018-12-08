@@ -18,7 +18,7 @@ export class SetupToken {
         ).pipe(
             map(response => response.json()),
             tap(data => {
-                Config.jwttoken = data._kmd.authtoken
+                Config.jwttoken = data.token
             }),
             catchError(this.handleErrors)
         );
