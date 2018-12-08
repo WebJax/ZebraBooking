@@ -1,0 +1,6 @@
+framework module Pods_ZebraBooking {
+  umbrella header "Pods-ZebraBooking-umbrella.h"
+
+  export *
+  module * { export * }
+}

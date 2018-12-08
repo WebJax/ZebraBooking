@@ -1,0 +1,18 @@
+use_frameworks!
+
+target "ZebraBooking" do
+# Begin Podfile - /Users/jacobthygesen/OneDrive/Jacob/Jacobs Skole/Diplom/Afsluttende opgave/ZebraBooking/node_modules/nativescript-iqkeyboardmanager/platforms/ios/Podfile
+pod 'IQKeyboardManager', '~> 5.0.0'
+
+# End Podfile
+
+# Begin Podfile - /Users/jacobthygesen/OneDrive/Jacob/Jacobs Skole/Diplom/Afsluttende opgave/ZebraBooking/node_modules/nativescript-imagepicker/platforms/ios/Podfile
+pod 'QBImagePickerController', '~> 3.4.0'
+# End Podfile
+
+# Begin Podfile - /Users/jacobthygesen/OneDrive/Jacob/Jacobs Skole/Diplom/Afsluttende opgave/ZebraBooking/node_modules/kinvey-nativescript-sdk/platforms/ios/Podfile
+platform :ios, '9.0'
+pod 'SAMKeychain', '~> 1.5.2'
+
+# End Podfile
+end
