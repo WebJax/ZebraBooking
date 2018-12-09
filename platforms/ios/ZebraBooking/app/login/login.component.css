@@ -1,27 +1,54 @@
-FlexboxLayout {
-  justify-content: center;
+.page {
   align-items: center;
-  background-size: cover;
-  background-image: url("~/images/background.jpg");
+  flex-direction: column;
 }
-StackLayout {
-  width: 300;
-  padding: 10 16;
-  background-color: #f0f0f0;
+.form {
+  margin: 40 24 auto;
+  flex-grow: 2;
+  vertical-align: top;
 }
-Image {
-  margin-bottom: 20;
-  height: 70;
+.logo {
+  margin-bottom: 0;
+  height: 212;
 }
-Button, TextField {
-  margin-bottom: 10;
+
+.toplabel {
+  margin-bottom: 14px;
+  font-size: 10
 }
+
+.input-field {
+  margin-bottom: 25;
+}
+.input {
+  font-size: 18;
+  placeholder-color: #A8A8A8;
+}
+.input:disabled {
+  background-color: white;
+  opacity: 0.5;
+}
+
 .btn-primary {
-  background-color: #CB1D00;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 30 5 15 5;
+  background-color: #A60085;
+  font-weight: bold;
+  border-radius: 4;
+  width: 256
 }
-TextField {
-  placeholder-color: #C4AFB4;
-  color: black;
+
+.bullet {
+  margin: 0 8;
+}
+
+.login-label {
+  horizontal-align: center;
+  color: #A8A8A8;
+  font-size: 14;
+}
+.sign-up-label {
+  margin-bottom: 20;
+}
+.bold {
+  color: #000000; 
 }

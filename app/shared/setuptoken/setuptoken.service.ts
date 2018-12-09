@@ -26,7 +26,7 @@ export class SetupToken {
 
     getCommonHeaders() {
         let headers = new Headers();
-        headers.append("Content-Type", "application/json");        
+        //headers.append("Content-Type", "application/json");        
         //headers.append("Authorization", Config.authHeader);
         return headers;
     }

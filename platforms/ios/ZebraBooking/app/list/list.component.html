@@ -1,9 +1,14 @@
-<ActionBar title="Groceries"></ActionBar>
+<ActionBar title="Behandlinger"></ActionBar>
 
 <GridLayout>
-    <RadListView [items]="groceryList">
+    <RadListView [items]="groceryList" selectionBehavior="Press" (itemSelected)="onItemSelected($event)">
         <ng-template let-item="item">
-            <Label [text]="item.name" class="p-15"></Label>
+            <GridLayout rows="auto,30,100" cols="300,*" class="overgruppe">
+                <Image [src]="item.image_url" class="gruppebillede" colSpan="2" row="0"></Image>
+                <Label col="1" row="1" [text]="item.titel" class="p-15 gruppetitel"></Label>
+                <label col="1" row="2" verticalAlignment="top" [text]="item.beskrivelse" class="p-15 gruppebeskrivelse"></label>
+                <Image col="2" row="1" horizontalAlignment="right" rowSpan="2" src="~/images/largearrow.png" class="largearrow"></Image>;
+            </GridLayout>
         </ng-template>
     </RadListView>
 </GridLayout>

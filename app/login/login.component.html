@@ -1,14 +1,54 @@
 <FlexboxLayout>
     <StackLayout class="form">
-        <Image src="~/images/logo.png"></Image>
+        <Image src="~/images/ZebraLogo.png" class="logo"></Image>
+        <GridLayout rows="auto, auto, auto, auto">
+            <StackLayout row="0" *ngIf="!isLoggingIn" class="input-field">
+                <label text="Fulde navn" class="toplabel"></label>
+                <TextField #fuldeNavn class="input" [isEnabled]="!processing"
+                    hint="Fulde navn" secure="true" [(ngModel)]="user.fuldeNavn"
+                    returnKeyType="next" (returnPress)="focusEmail()"></TextField>
+                <StackLayout class="hr-light"></StackLayout>
+            </StackLayout>
 
-        <TextField hint="Email Address" keyboardType="email" autocorrect="false"
-            autocapitalizationType="none" [(ngModel)]="user.email" class="input input-border"></TextField>
-        <TextField hint="Password" secure="true" [(ngModel)]="user.password"
-            class="input input-border"></TextField>
+            <StackLayout row="1" class="input-field">
+                <label text="Mailadresse" class="toplabel"></label>
+                <TextField class="input" hint="Mailadresse" [isEnabled]="!processing"
+                    keyboardType="email" autocorrect="false"
+                    autocapitalizationType="none" [(ngModel)]="user.email"
+                    returnKeyType="next" (returnPress)="focusPassword()"></TextField>
+                <StackLayout class="hr-light"></StackLayout>
+            </StackLayout>
 
-        <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="btn btn-primary"
-            (tap)="submit()"></Button>
-        <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+            <StackLayout row="2" class="input-field">
+                <label text="Password" class="toplabel"></label>
+                <TextField #password class="input" [isEnabled]="!processing"
+                    hint="Password" secure="true" [(ngModel)]="user.password"
+                    [returnKeyType]="isLoggingIn ? 'done' : 'next'"
+                    (returnPress)="focusBekraeftPassword()"></TextField>
+                <StackLayout class="hr-light"></StackLayout>
+            </StackLayout>
+
+            <StackLayout row="3" *ngIf="!isLoggingIn" class="input-field">
+                <label text="Gentag password" class="toplabel"></label>
+                <TextField #bekraeftPassword class="input" [isEnabled]="!processing"
+                    hint="Gentag password" secure="true" [(ngModel)]="user.bekraeftPassword"
+                    returnKeyType="done"></TextField>
+                <StackLayout class="hr-light"></StackLayout>
+            </StackLayout>
+
+            <ActivityIndicator rowSpan="3" [busy]="processing"></ActivityIndicator>
+        </GridLayout>
+    
+        <Button [text]="isLoggingIn ? 'Log ind' : 'Opret mig'" [isEnabled]="!processing"
+            (tap)="submit()" class="btn btn-primary m-t-20"></Button>
+        <GridLayout columns="auto,auto,*" horizontalAlignment="center" verticalAlignment="top">
+            <Label *ngIf="isLoggingIn" text="Glemt password" col="0" class="login-label bold"
+                (tap)="forgotPassword()"></Label>
+            <label text=" • " col="1" class="bullet"></label>
+            <Label [text]="isLoggingIn ? 'Opret bruger' : ''" col="2" class="login-label bold" 
+                (tap)="toggleForm()"></Label>
+        </GridLayout>
+        <label [text]="isLoggingIn ? 'Kontakt' : ''" class="login-label bold"
+            (tap)="kontakt()"></label>
     </StackLayout>
 </FlexboxLayout>
