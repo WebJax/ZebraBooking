@@ -1,0 +1,28 @@
+.overgruppe {
+    background-color: #A60085;
+    color: white;
+    margin: 16 16 0;
+    border-radius: 4;
+}
+
+.gruppebillede {
+    height: 160;
+    width: 344;
+}
+
+.gruppetitel {
+    font-size: 24;
+    color: white;
+    margin-top: 4;
+}
+
+.gruppebeskrivelse {
+    font-size: 14;
+    color: white;
+    margin-top: 0;
+}
+
+.largearrow {
+    height: 42;
+    margin-right: 16;
+}

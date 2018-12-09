@@ -1,7 +1,7 @@
 <ActionBar title="Behandlinger"></ActionBar>
 
 <GridLayout>
-    <RadListView [items]="groceryList" selectionBehavior="Press" (itemSelected)="onItemSelected($event)">
+    <RadListView [items]="groceryList" selectionBehavior="Press" (itemSelected)="onNavigationItemTap($event)">
         <ng-template let-item="item">
             <GridLayout rows="auto,30,100" cols="300,*" class="overgruppe">
                 <Image [src]="item.image_url" class="gruppebillede" colSpan="2" row="0"></Image>

@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.groceryService.load()
+        this.groceryService.load(0)
             .subscribe(loadedGroceries => {
                 loadedGroceries.forEach((groceryObject) => {
                     this.groceryList.unshift(groceryObject);
@@ -33,9 +33,9 @@ export class ListComponent implements OnInit {
     var itemIndex = args.index;
     var tappedItem = this.groceryList[itemIndex] as Overgruppe;
     if (tappedItem.har_undergrupper) {
-        this._router.navigateByUrl('undergruppe/undergruppe');  
+        this._router.navigateByUrl('undergruppe/undergruppe/' + tappedItem.id);
     } else {
-        this._router.navigateByUrl('');
+        this._router.navigateByUrl('behandlinger/behandlinger' + tappedItem.id);
     }
   }
 
