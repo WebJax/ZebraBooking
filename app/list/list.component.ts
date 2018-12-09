@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from '@angular/router';
+import { RouterExtensions } from "nativescript-angular/router";
 import { Overgruppe } from "../shared/grocery/grocery.model";
 import { GroceryService } from "../shared/grocery/grocery.service";
 
@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
     groceryList: Array<Overgruppe> = [];
     private _gruppe: Overgruppe;
 
-    constructor(private _router: Router, private groceryService: GroceryService) { }
+    constructor(private routerExtensions: RouterExtensions, private groceryService: GroceryService) { }
 
     get valgtGruppe(): Overgruppe {
         return this._gruppe;
@@ -33,9 +33,9 @@ export class ListComponent implements OnInit {
     var itemIndex = args.index;
     var tappedItem = this.groceryList[itemIndex] as Overgruppe;
     if (tappedItem.har_undergrupper) {
-        this._router.navigateByUrl('undergruppe/undergruppe/' + tappedItem.id);
+        this.routerExtensions.navigate(["/undergruppe/" + tappedItem.id]);
     } else {
-        this._router.navigateByUrl('behandlinger/behandlinger' + tappedItem.id);
+        this.routerExtensions.navigate(["/behandlinger/" + tappedItem.id]);
     }
   }
 
