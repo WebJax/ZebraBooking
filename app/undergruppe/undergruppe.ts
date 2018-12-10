@@ -41,7 +41,7 @@ export class undergruppeComponent implements OnInit {
   public onNavigationItemTap(args: any) {
     var itemIndex = args.index;
     var tappedItem = this.groceryList[itemIndex] as Undergruppe;
-    this._router.navigateByUrl('undergruppe/undergruppe');  
+    this._router.navigateByUrl('/behandlingComponent/' + tappedItem.id);  
   }
 
 }

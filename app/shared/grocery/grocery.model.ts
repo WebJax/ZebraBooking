@@ -4,7 +4,7 @@ export class Overgruppe {
         public titel: string,
         public beskrivelse: string,
         public image_url: string,
-        public har_undergrupper: boolean,
+        public har_undergrupper: string,
     ) { }
 }
 

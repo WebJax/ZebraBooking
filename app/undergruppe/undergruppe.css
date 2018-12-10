@@ -1,8 +1,9 @@
 .overgruppe {
     background-color: #A60085;
     color: white;
-    margin: 16 16 0;
+    margin: 8 16;
     border-radius: 4;
+    height: 112;
 }
 
 .gruppebillede {

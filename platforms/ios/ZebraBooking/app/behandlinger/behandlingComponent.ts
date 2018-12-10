@@ -1,31 +1,40 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
-import { Overgruppe } from "../shared/grocery/grocery.model";
-import { GroceryService } from "../shared/grocery/grocery.service";
+import { Behandling } from "../shared/behandlinger/behandlinger.model";
+import { BehandlingService } from "../shared/behandlinger/behandlinger.service";
+import { PageRoute } from "nativescript-angular/router";
+import { switchMap } from "rxjs/operators";
+
+
 @Component({
     selector: "gr-behandling",
-    providers: [GroceryService],
+    providers: [BehandlingService],
     templateUrl: "behandlinger/behandlinger.component.html",
     styleUrls: ["behandlinger/behandlinger.component.css"],
 })
 export class behandlingComponent implements OnInit {
-    groceryList: Array<Overgruppe> = [];
-    private _gruppe: Overgruppe;
-    constructor(private routerExtensions: RouterExtensions, private groceryService: GroceryService) { }
-    get valgtGruppe(): Overgruppe {
-        return this._gruppe;
+    behandlingsListe: Array<Behandling> = [];
+    id: number;
+
+    constructor(private routerExtensions: RouterExtensions, private behandlingService: BehandlingService, private pageRoute: PageRoute) { 
+        // use switchMap to get the latest activatedRoute instance
+        this.pageRoute.activatedRoute.pipe(
+            switchMap(activatedRoute => activatedRoute.params)
+            ).forEach((params) => { this.id = +params["id"]; });
     }
+
     ngOnInit() {
-        this.groceryService.load(0)
-            .subscribe(loadedGroceries => {
-                loadedGroceries.forEach((groceryObject) => {
-                    this.groceryList.unshift(groceryObject);
+        this.behandlingService.load(this.id)
+            .subscribe(hentedeBehandlinger => {
+                hentedeBehandlinger.forEach((behandlingsObjekt) => {
+                    this.behandlingsListe.unshift(behandlingsObjekt);
                 });
             });
     }
+
     public onNavigationItemTap(args: any) {
         var itemIndex = args.index;
-        var tappedItem = this.groceryList[itemIndex] as Overgruppe;
+        var tappedItem = this.behandlingsListe[itemIndex] as Behandling;
         this.routerExtensions.navigate(["/kalender/" + tappedItem.id]);
     }
 }

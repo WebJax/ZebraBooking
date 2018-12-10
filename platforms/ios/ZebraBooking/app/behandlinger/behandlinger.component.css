@@ -1,55 +1,28 @@
-.page {
-    align-items: center;
-    flex-direction: column;
-  }
-  .form {
-    margin: 40 24 auto;
-    flex-grow: 2;
-    vertical-align: top;
-  }
-  .logo {
-    margin-bottom: 0;
-    height: 212;
-  }
-  
-  .toplabel {
-    margin-bottom: 14px;
-    font-size: 10
-  }
-  
-  .input-field {
-    margin-bottom: 25;
-  }
-  .input {
-    font-size: 18;
-    placeholder-color: #A8A8A8;
-  }
-  .input:disabled {
-    background-color: white;
-    opacity: 0.5;
-  }
-  
-  .btn-primary {
-    margin: 30 5 15 5;
+.overgruppe {
     background-color: #A60085;
-    font-weight: bold;
+    color: white;
+    margin: 16 16 0;
     border-radius: 4;
-    width: 256
-  }
-  
-  .bullet {
-    margin: 0 8;
-  }
-  
-  .login-label {
-    horizontal-align: center;
-    color: #A8A8A8;
+}
+
+.gruppebillede {
+    height: 160;
+    width: 344;
+}
+
+.gruppetitel {
+    font-size: 24;
+    color: white;
+    margin-top: 4;
+}
+
+.gruppebeskrivelse {
     font-size: 14;
-  }
-  .sign-up-label {
-    margin-bottom: 20;
-  }
-  .bold {
-    color: #000000; 
-  }
-  
+    color: white;
+    margin-top: 0;
+}
+
+.largearrow {
+    height: 42;
+    margin-right: 16;
+}

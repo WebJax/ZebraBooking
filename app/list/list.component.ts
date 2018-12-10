@@ -32,10 +32,10 @@ export class ListComponent implements OnInit {
   public onNavigationItemTap(args: any) {
     var itemIndex = args.index;
     var tappedItem = this.groceryList[itemIndex] as Overgruppe;
-    if (tappedItem.har_undergrupper) {
+    if (tappedItem.har_undergrupper != "false") {
         this.routerExtensions.navigate(["/undergruppe/" + tappedItem.id]);
     } else {
-        this.routerExtensions.navigate(["/behandlinger/" + tappedItem.id]);
+        this.routerExtensions.navigate(["/behandlingComponent/" + tappedItem.id]);
     }
   }
 
